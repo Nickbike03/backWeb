@@ -26,7 +26,8 @@ public class UtenteService implements IUtenteService {
     @Override
     public void deleteUtente(String email) throws Exception{
         if (utenteDao.findByEmail(email) == null) throw new Exception("non esiste un utente da eliminare con la email: "+ email);
-        utenteDao.delete(utenteDao.findByEmail(email));
+        Utente u = utenteDao.findByEmail(email);
+        utenteDao.delete(u);
     }
 
 

@@ -9,7 +9,7 @@ public interface IDocumentoService {
     Collection<Documento> findByMateria(String materia);
     Documento findById(int id);
     Documento createDocumento(Documento documento) throws Exception;
-    void deleteDocumento(int id);
+    void deleteDocumento(int id) throws Exception;
 
     
 }
