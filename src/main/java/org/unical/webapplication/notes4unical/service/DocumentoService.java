@@ -2,9 +2,11 @@ package org.unical.webapplication.notes4unical.service;
 
 import java.util.Collection;
 
+import org.springframework.stereotype.Service;
 import org.unical.webapplication.notes4unical.model.Documento;
 import org.unical.webapplication.notes4unical.persistence.dao.DocumentoDao;
 
+@Service
 public class DocumentoService implements IDocumentoService {
 
     private final DocumentoDao documentoDao;
@@ -32,7 +34,7 @@ public class DocumentoService implements IDocumentoService {
     public Documento createDocumento(Documento documento) throws Exception {
         Documento d = documentoDao.findByPrimarykey(documento.getId());
         if (d != null) throw new Exception("esiste gia un altro documento con id: "+ d.getId());
-        
+        documentoDao.save(documento);
         return documentoDao.findByPrimarykey(documento.getId());
     }
 
@@ -40,6 +42,7 @@ public class DocumentoService implements IDocumentoService {
     public void deleteDocumento(int id) throws Exception {
         Documento d = documentoDao.findByPrimarykey(id);
         if (d == null) throw new Exception("non esiste un documento che ha id: " + id);
+        documentoDao.delete(d);
     }
 
    
