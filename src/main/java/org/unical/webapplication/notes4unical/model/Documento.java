@@ -6,18 +6,20 @@ public class Documento {
     protected String nome;
     protected String destrizione;
     protected String materia;
-    
+    protected byte[] contenuto;
+
     public Documento() {}
 
     
    
 
-    public Documento(int id, String utente, String nome, String destrizione, String materia) {
+    public Documento(int id, String utente, String nome, String destrizione, String materia, byte[] _contenuto) {
         this.id = id;
         this.utente = utente;
         this.nome = nome;
         this.destrizione = destrizione;
         this.materia = materia;
+        this.contenuto = _contenuto;
     }
 
 
@@ -55,6 +57,14 @@ public class Documento {
 
     public void setMateria(String materia) {
         this.materia = materia;
+    }
+
+    public byte[] getContenuto() {
+        return contenuto;
+    }
+
+    public void setContenuto(byte[] contenuto) {
+        this.contenuto = contenuto;
     }
 
 
