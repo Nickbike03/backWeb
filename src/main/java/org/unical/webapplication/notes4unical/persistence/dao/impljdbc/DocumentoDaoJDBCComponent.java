@@ -95,7 +95,7 @@ public class DocumentoDaoJDBCComponent implements DocumentoDao {
     @Override
     public void delete(Documento documento) {
         try {
-            // Verifica esistenza utente
+            // Verifica esistenza documento
             String checkQuery = "SELECT COUNT(*) FROM documento WHERE id = ?";
             PreparedStatement checkStmt = connection.prepareStatement(checkQuery);
             checkStmt.setInt(1, documento.getId());

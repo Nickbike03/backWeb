@@ -4,7 +4,7 @@ CREATE TABLE corso_di_studio
     nome VARCHAR (100), 
     facolta VARCHAR (100), 
     data DATE
-)
+);
 
 CREATE TABLE utente
 (
@@ -13,7 +13,7 @@ CREATE TABLE utente
     cognome VARCHAR (100), 
     id_corsodistudio INT,
     FOREIGN KEY (id_corsodistudio) REFERENCES corso_di_studio(id) ON DELETE CASCADE
-)
+);
 
 CREATE TABLE documento
 ( 
@@ -25,4 +25,13 @@ CREATE TABLE documento
     contenuto BYTEA,
     PRIMARY KEY (id),
     FOREIGN KEY (utente) REFERENCES utente(email), ON DELETE CASCADE
-)
+);
+
+CREATE TABLE preferiti
+(
+    utente VARCHAR (100),
+    documento INT,
+    PRIMARY KEY (utente, documento),
+    FOREIGN KEY (utente) REFERENCES utente(email) on DELETE CASCADE,
+    FOREIGN key (documento) REFERENCES documento(id) on DELETE CASCADE
+);
