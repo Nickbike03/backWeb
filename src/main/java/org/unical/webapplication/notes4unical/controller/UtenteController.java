@@ -9,9 +9,7 @@ import org.unical.webapplication.notes4unical.model.Utente;
 import org.unical.webapplication.notes4unical.service.IUtenteService;
 import org.unical.webapplication.notes4unical.service.UtenteService;
 
-
-
-@RequestMapping("/api/utente")
+@RequestMapping("doLogin")
 @Controller
 public class UtenteController {
     private final IUtenteService utenteService;
@@ -19,7 +17,6 @@ public class UtenteController {
     public UtenteController(UtenteService _utenteService){
         this.utenteService = _utenteService;
     }
-
 
     @RequestMapping(value= "{email}", method=RequestMethod.GET)   
     ResponseEntity<Utente> getUtenteByEmail(@PathVariable String _email){

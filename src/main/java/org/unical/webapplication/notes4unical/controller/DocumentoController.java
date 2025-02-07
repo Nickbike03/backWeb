@@ -39,7 +39,7 @@ public class DocumentoController {
         return ResponseEntity.ok(this.documentoService.findByMateria(materia));
     }
 
-    @RequestMapping(value="/", method= RequestMethod.POST)
+    @RequestMapping(value="", method= RequestMethod.POST)
     ResponseEntity<Documento> createNewDocumento(@RequestBody Documento documento) throws Exception{
         try {
             return ResponseEntity.ok(this.documentoService.createDocumento(documento));
