@@ -25,7 +25,7 @@ public class LoginServlet extends HttpServlet {
                 req.getSession(true).setAttribute("username", username);
                 resp.sendRedirect("/");
             }else{
-                RequestDispatcher dispatcher = req.getRequestDispatcher("views/loginErrato.html");
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/");
                 dispatcher.forward(req, resp);
             }
         }catch (ServletException e) {
