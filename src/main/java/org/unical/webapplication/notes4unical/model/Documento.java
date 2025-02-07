@@ -10,9 +10,6 @@ public class Documento {
 
     public Documento() {}
 
-    
-   
-
     public Documento(int id, String utente, String nome, String destrizione, String materia, byte[] _contenuto) {
         this.id = id;
         this.utente = utente;
@@ -21,10 +18,6 @@ public class Documento {
         this.materia = materia;
         this.contenuto = _contenuto;
     }
-
-
-
-
     public String getUtente() {
         return utente;
     }

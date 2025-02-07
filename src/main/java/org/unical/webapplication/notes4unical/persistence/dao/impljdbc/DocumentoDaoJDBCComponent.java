@@ -42,6 +42,8 @@ public class DocumentoDaoJDBCComponent implements DocumentoDao {
                 doc.setDestrizione(rs.getString("descrizione"));
                 doc.setMateria(rs.getString("materia"));
                 doc.setContenuto(rs.getBytes("contenuto"));
+
+                documenti.add(doc);
             
             }
         } catch (Exception e) {
